@@ -4,7 +4,7 @@ import { gsap } from "gsap";
 interface PrimayButtonProps {
   OnClick: () => void;
   ClassNames: string;
-  icon: HTMLElement;
+  icon: any;
 }
 
 const PrimaryButton: React.FC<PrimayButtonProps> = ({

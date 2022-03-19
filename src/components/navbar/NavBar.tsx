@@ -73,6 +73,9 @@ const NavBar: React.FC = () => {
           <NavItem key={item.id} item={item} />
         ))}
         <PrimaryButton
+          OnClick={() => {
+            console.log("Hello world");
+          }}
           ClassNames={
             "nav-cta clip-path-btn opacity-0 -translate-x-[200px] clip-path-square-left-hidden hidden sm:flex"
           }
