@@ -1,6 +1,18 @@
 import React from "react";
 import { gsap } from "gsap";
-const PrimaryButton: React.FC = ({ children, OnClick, ClassNames, icon }) => {
+
+interface PrimayButtonProps {
+  OnClick: () => void;
+  ClassNames: string;
+  icon: HTMLElement;
+}
+
+const PrimaryButton: React.FC<PrimayButtonProps> = ({
+  children,
+  OnClick,
+  ClassNames,
+  icon,
+}) => {
   const OnHover = () => {
     gsap
       .timeline({ defaults: { ease: "Power4.easeInOut", duration: 0.3 } })
