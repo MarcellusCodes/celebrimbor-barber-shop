@@ -2,9 +2,17 @@ import React, { useRef } from "react";
 import Link from "next/link";
 import { gsap } from "gsap";
 
-const NavItem: React.FC = ({ item }) => {
-  const NavUnderlineLeft = useRef();
-  const NavUnderlineRight = useRef();
+interface NavItemProps {
+  item: {
+    id: number;
+    name: string;
+    href: string;
+  };
+}
+
+const NavItem: React.FC<NavItemProps> = ({ item }) => {
+  const NavUnderlineLeft = useRef<HTMLSpanElement>(null);
+  const NavUnderlineRight = useRef<HTMLSpanElement>(null);
   const onHover = () => {
     gsap
       .timeline({ defaults: { ease: "Power4.easeInOut", duration: 0.3 } })
