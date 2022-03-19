@@ -35,7 +35,7 @@ const SplashScreen: React.FC = () => {
       })
       .to(".splash-screen", {
         clipPath: "polygon(0 100%, 100% 100%, 100% 100%, 0 100%)",
-        delay: -0.3,
+        delay: -0.6,
       });
   }, []);
   return (

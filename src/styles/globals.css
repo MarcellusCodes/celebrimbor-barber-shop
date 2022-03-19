@@ -6,6 +6,22 @@
   clip-path: polygon(0 0, 100% 0%, 100% 0, 0 0);
 }
 
+.clip-path-square-left-hidden {
+  clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+}
+
 .clip-path-square-visible {
   clip-path: polygon(0 100%, 100% 100%, 100% 0, 0 0);
+}
+
+.clip-path-circle-hidden {
+  clip-path: circle(2.9% at 50% 50%);
+}
+
+.clip-path-btn {
+  clip-path: polygon(10% 0, 100% 0, 100% 100%, 0 100%);
+}
+
+.test {
+  transition: width 0.3s ease-in-out;
 }
