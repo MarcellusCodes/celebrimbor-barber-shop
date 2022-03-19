@@ -6,7 +6,7 @@ import { NavItem, PrimaryButton } from "../index";
 import { NavItems } from "../../utils/index";
 
 const NavBar: React.FC = () => {
-  const MobileNavBtn = useRef();
+  const MobileNavBtn = useRef<HTMLButtonElement>(null);
   const [ToggleNav, SetToggleNav] = useState(false);
 
   const activateMobileNav = () => {
@@ -70,7 +70,7 @@ const NavBar: React.FC = () => {
       </Link>
       <ul className="flex flex-row items-center space-x-6">
         {NavItems.map((item) => (
-          <NavItem item={item} />
+          <NavItem key={item.id} item={item} />
         ))}
         <PrimaryButton
           ClassNames={
