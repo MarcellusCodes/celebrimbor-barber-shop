@@ -1,4 +1,4 @@
-import React, { useLayoutEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { gsap } from "gsap";
 import Link from "next/link";
@@ -19,7 +19,7 @@ const NavBar: React.FC = () => {
     SetToggleNav(!ToggleNav);
   };
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     gsap
       .timeline({ defaults: { ease: "Power4.easeInOut", duration: 1.5 } })
       .to(".branding", {
@@ -42,7 +42,7 @@ const NavBar: React.FC = () => {
       });
   }, []);
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     gsap.to(MobileNavBtn.current, {
       opacity: 1,
       x: 0,
@@ -52,7 +52,7 @@ const NavBar: React.FC = () => {
     });
   }, []);
   return (
-    <nav className="flex flex-row items-center justify-between py-2">
+    <nav className="flex flex-row items-center justify-between py-6">
       <Link href="/" passHref>
         <div className="flex flex-row items-center branding -translate-x-[100px] clip-path-square-left-hidden cursor-pointer">
           <div className="sm:w-[64px] sm:h-[64px] w-[32px] h-[32px]">
@@ -77,7 +77,7 @@ const NavBar: React.FC = () => {
             console.log("Hello world");
           }}
           ClassNames={
-            "nav-cta clip-path-btn opacity-0 -translate-x-[200px] clip-path-square-left-hidden hidden sm:flex"
+            "nav-cta opacity-0 -translate-x-[200px] clip-path-square-left-hidden hidden sm:flex"
           }
           icon={
             <svg
@@ -93,6 +93,7 @@ const NavBar: React.FC = () => {
               <circle cx={17} cy={15} r={1.5} />
             </svg>
           }
+          direction="left"
         >
           Termin
         </PrimaryButton>

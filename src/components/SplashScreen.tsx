@@ -1,16 +1,17 @@
-import React, { useEffect, useRef, useLayoutEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import Lottie from "lottie-react";
 import ScissorJson from "../assets/scissor.json";
 
 const SplashScreen: React.FC = () => {
-  useLayoutEffect(() => {
+  useEffect(() => {
     gsap
       .timeline({ defaults: { ease: "Power4.easeInOut", duration: 1.5 } })
       .to(".splash-title", {
         opacity: 1,
         clipPath: "polygon(0 100%, 100% 100%, 100% 0, 0 0)",
         y: 100,
+        delay: -0.5,
       })
       .to(".splash-scissor", {
         y: 0,
